@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { useQuery, gql } from '@apollo/client';
+import SearchBar from './components/booksearch';
+import BookList from './components/book';
+import ReadingList from './components/readinglist';
 
-function App() {
+const GET_BOOKS = gql`
+  query GetBooks {
+    books {
+      author
+      coverPhotoURL
+      readingLevel
+      title
+    }
+  }
+`;
+
+const App = () => {
+  const { loading, error, data } = useQuery(GET_BOOKS);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [readingList, setReadingList] = useState([]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
+  const filteredBooks = data.books.filter(book =>
+    book.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SearchBar setSearchTerm={setSearchTerm} />
+      <BookList books={filteredBooks} setReadingList={setReadingList} />
+      <ReadingList readingList={readingList} setReadingList={setReadingList} />
     </div>
   );
-}
+};
 
 export default App;
