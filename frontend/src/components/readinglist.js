@@ -14,7 +14,7 @@ const ReadingList = ({ readingList, setReadingList }) => {
       {readingList.map((book) => (
         <ListItem key={book.title}>
           <ListItemText primary={book.title} secondary={book.author} />
-          <Button onClick={() => removeFromReadingList(book.title)}>Remove</Button>
+          <Button onClick={() => removeFromReadingList(book.title)}>Remove Book</Button>
         </ListItem>
       ))}
     </List>

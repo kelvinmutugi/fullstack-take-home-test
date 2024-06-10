@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 
 const BookList = ({ books, setReadingList }) => {
@@ -13,20 +14,34 @@ const BookList = ({ books, setReadingList }) => {
 
   return (
     <div>
-      {books.map((book) => (
-        <Card key={book.title}>
-          <CardMedia
+      <Grid container spacing={2}>
+        {books.map((book, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
+            <Card
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                flexGrow: 1,
+                p: 1,
+              }}
+            >
+         <CardMedia
+           component="img"
             image={book.coverPhotoURL}
-            title={book.title}
-            style={{ height: 140 }}
+            style={{ height: 194 }}
           />
-          <CardContent>
+          <CardContent>  
             <Typography variant="h5">{book.title}</Typography>
             <Typography variant="subtitle1">{book.author}</Typography>
-            <Button  onClick={() => addToReadingList(book)}>Add</Button>
-          </CardContent>
-        </Card>
-      ))}
+              <Button onClick={() => addToReadingList(book)} variant="contained">ADD</Button>
+         </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+
+
     </div>
   );
 };
