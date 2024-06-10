@@ -6,8 +6,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-
-
 const BookList = ({ books, setReadingList }) => {
   const addToReadingList = (book) => {
     setReadingList((prevList) => [...prevList, book]);
@@ -25,7 +23,7 @@ const BookList = ({ books, setReadingList }) => {
           <CardContent>
             <Typography variant="h5">{book.title}</Typography>
             <Typography variant="subtitle1">{book.author}</Typography>
-            <Button onClick={() => addToReadingList(book)}>Add</Button>
+            <Button  onClick={() => addToReadingList(book)}>Add</Button>
           </CardContent>
         </Card>
       ))}
