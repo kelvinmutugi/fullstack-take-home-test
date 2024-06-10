@@ -10,7 +10,7 @@ const SearchBar = ({ setSearchTerm }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center', 
-      }}
+      }}// centering my search bar
     >
       <TextField
         label="Search..."
