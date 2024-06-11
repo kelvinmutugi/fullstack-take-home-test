@@ -33,7 +33,7 @@ const BookList = ({ books, setReadingList }) => {
           <CardContent>  
             <Typography variant="h5">{book.title}</Typography>
             <Typography variant="subtitle1">{book.author}</Typography>
-              <Button onClick={() => addToReadingList(book)} variant="contained">ADD</Button>
+              <Button onClick={() => addToReadingList(book)} variant="contained" color='primary'> Add to Reading List</Button>
          </CardContent>
             </Card>
           </Grid>
