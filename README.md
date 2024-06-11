@@ -1,3 +1,11 @@
+
+
+ ![Screenshot (576)](https://github.com/kelvinmutugi/fullstack-take-home-test/assets/77227025/b172db88-bb59-4a51-9229-b72153b2fddf)
+![Screenshot (577)](https://github.com/kelvinmutugi/fullstack-take-home-test/assets/77227025/bdc436e4-2366-4cce-abb7-231617f80646)
+![Screenshot (578)](https://github.com/kelvinmutugi/fullstack-take-home-test/assets/77227025/c449a457-86dd-4305-a888-d5b61d6928d2)
+
+ 
+ 
  ![svgviewer-output](https://github.com/ElloTechnology/backend_takehome/assets/3518127/561bc8d4-bffc-4360-b9ea-61e876bcec93)
 
 
