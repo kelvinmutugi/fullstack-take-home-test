@@ -3,6 +3,7 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import { Box } from '@mui/material';
 
+// The component receives setSearchTerm as a prop to update the search term in the parent component
 const SearchBar = ({ setSearchTerm }) => {
   return (
     <Box
